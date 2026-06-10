@@ -1,0 +1,50 @@
+package sugoroku_game;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Sugoroku {
+
+	public static void main(String[] args) {
+		// TODO 自動生成されたメソッド・スタブ
+
+		while (true) {
+			System.out.println("サイコロを振る？ y or n ");
+
+			String word = new java.util.Scanner(System.in).nextLine();
+
+			if (word == "y" || word == "n") {
+
+				if (word == "y") {
+					Random rand = new Random();
+					int num = rand.nextInt(6) + 1;
+					System.out.println("サイコロの目は" + num + " です");
+
+					ArrayList<Integer> sum = new ArrayList<>();
+					sum.add(num);
+					System.out.println("現在のマス目:" + num);
+
+					if (num <= 7) {
+						System.out.println("まだ道のりは遠い");
+					}
+
+					else if (num < 7 && num >= 9) {
+						System.out.println("あと一息！");
+					} else {
+						System.out.println("ゴール！おめでとう！ ☆*:.｡.o(≧▽≦)o.｡.:*☆");
+					}
+				}
+
+				else {
+					System.out.println("ゲームを終了しました。また来てね！('ω')ノ");
+					break;
+				}
+			}
+			else {
+				System.out.println("入力がただしくありません");
+				return;
+			}
+		}
+	}
+
+}
